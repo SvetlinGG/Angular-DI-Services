@@ -9,4 +9,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'di-services';
+
+  handleClick(){
+    this.title = 'Zdrastiii'
+  }
 }
