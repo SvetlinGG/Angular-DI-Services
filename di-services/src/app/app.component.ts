@@ -15,3 +15,15 @@ export class AppComponent {
     this.title = 'Zdrastiii'
   }
 }
+// Standart console log
+
+console.log(123);
+
+// Monkey patching console log
+const originalConsoleLog = console.log;
+
+
+
+
+
+
