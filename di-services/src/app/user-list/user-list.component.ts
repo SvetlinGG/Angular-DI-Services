@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UserItemComponent } from './user-item/user-item.component';
 
 @Component({
@@ -9,5 +9,5 @@ import { UserItemComponent } from './user-item/user-item.component';
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent {
-
+  @Input('users') usersList = [];
 }
