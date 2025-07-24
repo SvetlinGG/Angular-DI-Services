@@ -1,5 +1,15 @@
-<p>This is my user list!</p>
+
+<div style="
+width: 100%; 
+border: 1px solid black; 
+display: flex; 
+flex-direction: column;
+justify-content: center;"
+>
+<p>This is my user list:</p>
 
 @for (user of usersList; track $index){
     <app-user-item [users]="user" />
 }
+</div>
+
