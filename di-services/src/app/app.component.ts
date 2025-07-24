@@ -21,17 +21,22 @@ export class AppComponent {
   handleClick(){
     this.title = 'Zdrastiii'
   }
+  addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement){
+    console.log(inputName.value);
+    console.log(inputAge.value);
+    
+  }
 }
 
 
 
 
-// Standart console log
+// // Standart console log
 
-console.log(123);
+// console.log(123);
 
-// Monkey patching console log
-const originalConsoleLog = console.log;
+// // Monkey patching console log
+//const originalConsoleLog = console.log;
 
 
 
