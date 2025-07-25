@@ -5,5 +5,6 @@
 @for (user of usersList; track $index){
     <app-user-item [users]="user" />
 }
+<button (click)="refreshList()">Refresh List</button>
 </div>
 

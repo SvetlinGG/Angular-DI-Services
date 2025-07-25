@@ -33,6 +33,7 @@ export class AppComponent {
     inputName.value = '';
     inputAge.value = '';
     
+    console.log(this.appUsers);
     
   }
 }
