@@ -28,8 +28,8 @@ export class AppComponent {
       age: Number(inputAge.value),
     };
 
-    //this.appUsers.push(user);
-    this.appUsers = [...this.appUsers, user];
+    this.appUsers.push(user);
+    // this.appUsers = [...this.appUsers, user]; !IMPORTANT HACK
     inputName.value = '';
     inputAge.value = '';
     
