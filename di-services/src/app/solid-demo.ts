@@ -51,10 +51,21 @@ interface PersonPrivateDetails {
     lastName: string;
 }
 
-interface PersonPublicDetails {
-    person: PersonPrivateDetails;
+interface PersonPublicDetails extends PersonPrivateDetails, WalletDetails {
+    
     address: Address;
-    wallet: WalletDetails;
+    
 
 
-class Person implements PersonPublicDetails {}
+class Person implements PersonPrivateDetails {
+    firstName: string;
+    lastName: string;
+
+    constructor(firstName: string, lastName: string){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+}
+// Dependency Inversion is the RULE
+// Dependency Injection --> realization of the rule (Design Pattern)
