@@ -72,9 +72,11 @@
 
 class Wallet {
     balance = 0;
+    currency = 'EUR';
 
-    constructor(balance: number){
+    constructor(balance: number, currency: string){
         this.balance = balance;
+        this.currency = currency;
     }
 }
 
@@ -90,16 +92,23 @@ class Car {
     }
 }
 
+// WORST PRACTICE
+
 class User {
     name: string;
     wallet: Wallet;
     car: Car;
 
-    constructor(name: string, balance: number, model: string, make: string, color: string){
+    constructor(name: string, wallet: Wallet, car: Car){
         this.name = name;
-        this.wallet = new Wallet(balance);
-        this.car = new Car(model, make, color);
+        this.wallet = wallet
+        this.car = car;
     }
 }
-const userPesho = new User('Pesho', 500, 'VW', 'Polo', 'blue');
-const userMaria = new User('Maria', 400, 'Mercedes', 'AMG', 'black');
+const peshosWallet = new Wallet(500, 'EUR')
+const peshosCar = new Car('VW', 'Polo', 'blue')
+const userPesho = new User('Pesho', peshosWallet, peshosCar);
+
+const mariasWallet = new Wallet(400, 'EUR');
+const mariasCar = new Car('Mercedes', 'AMG', 'black');
+const userMaria = new User('Maria', mariasWallet, mariasCar);
