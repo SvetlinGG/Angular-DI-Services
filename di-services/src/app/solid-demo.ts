@@ -32,6 +32,29 @@ class Wallet {
     }
 
     removeMoney(){
-        
+
     }
 }
+
+interface Address {
+    str: string;
+    country: string;
+}
+
+interface WalletDetails {
+    type: string;
+    balance: number;
+    currency: string;
+}
+interface PersonPrivateDetails {
+    firstName: string;
+    lastName: string;
+}
+
+interface PersonPublicDetails {
+    person: PersonPrivateDetails;
+    address: Address;
+    wallet: WalletDetails;
+
+
+class Person implements PersonPublicDetails {}
