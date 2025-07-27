@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
 import { SimpleUser } from './types';
+import { UserService } from './user-list/user.service';
 
 @Component({
   selector: 'app-root',
@@ -12,30 +13,23 @@ import { SimpleUser } from './types';
 })
 export class AppComponent {
   title = 'di-services';
-  appUsers: SimpleUser[] = [
-    {name: 'Max', age: 31},
-    {name: 'Anna', age: 30},
-    {name: 'Chris', age: 29}
-  ];
+
+  users: SimpleUser[] = []
+
+
+  constructor(private userService: UserService){
+    this.users = this.userService.appUsers;
+  }
 
   handleClick(){
-    this.title = 'Zdrastiii'
+    this.title = 'Zdrastiii';
   }
-  addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement){
 
-    const user = {
-      name: inputName.value, 
-      age: Number(inputAge.value),
-    };
-
-    this.appUsers.push(user);
-    // this.appUsers = [...this.appUsers, user]; !IMPORTANT HACK
-    inputName.value = '';
-    inputAge.value = '';
-    
-    console.log(this.appUsers);
-    
+  addSimpleUser(inputName: HTMLInputElement, inputAge: HTMLInputElement){
+    // Validate Input
+    this.userService.addUser(inputName, inputAge);
   }
+  
 }
 
 
