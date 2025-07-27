@@ -17,7 +17,7 @@ export class UserListComponent implements OnChanges {
 
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('changes',changes);
+    //console.log('changes',changes);
   }
   refreshList(){
     this.cd.detectChanges
