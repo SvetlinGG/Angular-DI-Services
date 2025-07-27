@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
-import { SimpleUser } from './types';
+import { SimpleUser, ComplexUser } from './types';
 import { UserService } from './user-list/user.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -12,14 +13,21 @@ import { UserService } from './user-list/user.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'di-services';
-
-  users: SimpleUser[] = []
+export class AppComponent implements OnInit{
+  title = 'demo-app';
+  isLoading = true;
+  users: ComplexUser[] = [];
 
 
   constructor(private userService: UserService){
     this.users = this.userService.appUsers;
+  }
+
+  ngOnInit(): void {
+    this.userService.getUsers().subscribe((users) => {
+  
+      this.users = users;
+    })
   }
 
   handleClick(){

@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
-import { SimpleUser } from '../types';
+import { ComplexUser, SimpleUser} from '../types';
+import { HttpClient } from '@angular/common/http';
 
 // @Injectable({
 //   providedIn: 'root'
 // })
+@Injectable()
 export class UserService {
-  appUsers: SimpleUser[] = [
-    {name: 'Max', age: 31},
-    {name: 'Anna', age: 30},
-    {name: 'Chris', age: 29}
-  ];
+  URL = 'https://jsonplaceholder.typicode.com/users';
 
-  constructor() { }
+  appUsers: ComplexUser[] = [];
+
+  constructor(private http: HttpClient) { }
+
+  getUsers(){
+    return this.http.get<ComplexUser[]>(this.URL);
+  }
 
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement){
 
