@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,4 +10,16 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'demo-standalone';
+  counter = signal(0);
+
+  ngOnInit(){
+    console.log(`counter: ${this.counter}`);
+    
+
+  }
+
+  increment(){
+    const value = this.counter() + 1;
+    this.counter.set(value);
+  }
 }
