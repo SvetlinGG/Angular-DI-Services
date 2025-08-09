@@ -1,35 +1,36 @@
 import { Component, computed, signal } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavigationBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'demo-standalone';
-  counter = signal(0);
+  // title = 'demo-standalone';
+  // counter = signal(0);
 
-  ngOnInit(){
-    console.log(`counter: ${this.counter}`);
-  }
-  increment(){
-    const value = this.counter() + 1;
-    this.counter.set(value);
-  }
-  count = signal(10);
+  // ngOnInit(){
+  //   console.log(`counter: ${this.counter}`);
+  // }
+  // increment(){
+  //   const value = this.counter() + 1;
+  //   this.counter.set(value);
+  // }
+  // count = signal(10);
 
-  butter = computed(() => this.count() * 0.1);
-  sugar = computed(() => this.count() * 0.05);
-  flour = computed(() => this.count() * 0.2);
+  // butter = computed(() => this.count() * 0.1);
+  // sugar = computed(() => this.count() * 0.05);
+  // flour = computed(() => this.count() * 0.2);
+  // update(event: Event){
+  //   const input = event.target as HTMLInputElement;
+  //   this.count.set(parseInt(input.value));
+  // }
 
 
-  update(event: Event){
-    const input = event.target as HTMLInputElement;
-    this.count.set(parseInt(input.value));
-  }
 }
-bootstrapApplication(AppComponent)
+//bootstrapApplication(AppComponent)
