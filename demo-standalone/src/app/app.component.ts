@@ -1,4 +1,5 @@
 import { Component, computed, signal } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -28,3 +29,4 @@ export class AppComponent {
     this.count.set(parseInt(input.value))
   }
 }
+bootstrapApplication(AppComponent)
