@@ -1,3 +1,9 @@
 <h1>Hello my {{title}}</h1>
 <h3>Hello from counter {{this.counter()}}</h3>
 <button (click)="increment()">Increment</button>
+
+<h2>Cookie recipe</h2>
+<label>
+    <input type="range" min="10" max="100" step="10" [value]="count()"
+    (input)="update($event)" />
+</label>
