@@ -2,6 +2,7 @@ import { Component, computed, signal } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { UsersComponent } from './users/users.component';
 
 @Component({
   selector: 'app-root',
