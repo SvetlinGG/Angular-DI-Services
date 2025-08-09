@@ -21,4 +21,10 @@ export class AppComponent {
   }
   count = signal(10);
   butter = computed(() => this.count() * 0.1)
+
+
+  update(event: Event){
+    const input = event.target as HTMLElement;
+    this.count.set(parseInt(input.value))
+  }
 }
