@@ -21,12 +21,15 @@ export class AppComponent {
     this.counter.set(value);
   }
   count = signal(10);
-  butter = computed(() => this.count() * 0.1)
+
+  butter = computed(() => this.count() * 0.1);
+  sugar = computed(() => this.count() * 0.05);
+  flour = computed(() => this.count() * 0.2);
 
 
   update(event: Event){
     const input = event.target as HTMLElement;
-    this.count.set(parseInt(input.value))
+    this.count.set(parseInt(input.value));
   }
 }
 bootstrapApplication(AppComponent)
