@@ -28,7 +28,7 @@ export class AppComponent {
 
 
   update(event: Event){
-    const input = event.target as HTMLElement;
+    const input = event.target as HTMLInputElement;
     this.count.set(parseInt(input.value));
   }
 }
