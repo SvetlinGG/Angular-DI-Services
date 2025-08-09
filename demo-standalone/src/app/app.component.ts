@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -14,12 +14,11 @@ export class AppComponent {
 
   ngOnInit(){
     console.log(`counter: ${this.counter}`);
-    
-
   }
-
   increment(){
     const value = this.counter() + 1;
     this.counter.set(value);
   }
+  count = signal(10);
+  butter = computed(() => this.count() * 0.1)
 }
