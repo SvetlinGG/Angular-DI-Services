@@ -11,7 +11,7 @@ import { UsersComponent } from './users/users.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent{
   // title = 'demo-standalone';
   // counter = signal(0);
 
@@ -31,12 +31,7 @@ export class AppComponent implements OnInit {
   //   const input = event.target as HTMLInputElement;
   //   this.count.set(parseInt(input.value));
   // }
-  @Output() name = 'Svetlin';
-  @Output() age = 52
-
-  ngOnInit(): void {
-    
-  }
+  
 
 }
 //bootstrapApplication(AppComponent)

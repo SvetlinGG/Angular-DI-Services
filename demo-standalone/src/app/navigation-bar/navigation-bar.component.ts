@@ -8,17 +8,8 @@ import { RouterLink } from '@angular/router';
   templateUrl: './navigation-bar.component.html',
   styleUrl: './navigation-bar.component.css'
 })
-export class NavigationBarComponent implements OnInit {
+export class NavigationBarComponent {
 
-  @Input() userName: string;
-  @Input() userAge: number;
-  constructor(){
-    
-  }
-
-  ngOnInit(): void {
-    
-  }
   
 
 }
