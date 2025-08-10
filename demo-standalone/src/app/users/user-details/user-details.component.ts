@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
+import { ActivatedRoute } from '@angular/router';
+import { User } from '../../types/user';
 
 @Component({
   selector: 'app-user-details',
@@ -10,12 +12,20 @@ import { UsersService } from '../users.service';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor(private userService: UsersService){
+  user: User | null = null;
 
-  }
+  constructor(
+    private userService: UsersService,
+    private activatedRoute: ActivatedRoute,
+
+  ){}
+
   ngOnInit(): void {
-    this.userService.getUsers(2).subscribe(user => {
-      console.log(user);
+    const userId = this.activatedRoute.snapshot.params['id']
+
+
+    this.userService.getSingleUser(userId).subscribe(user => {
+      this.user = user;
       
     })
   }
