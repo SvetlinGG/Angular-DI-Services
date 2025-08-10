@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UsersService } from './users.service';
 import { User } from '../types/user';
 
@@ -13,7 +13,7 @@ import { User } from '../types/user';
 export class UsersComponent implements OnInit {
   users: User[] = [];
 
-  constructor(private userService: UsersService){}
+  constructor(private userService: UsersService, private router: Router){}
 
   ngOnInit(): void {
     this.fetchUsers()
