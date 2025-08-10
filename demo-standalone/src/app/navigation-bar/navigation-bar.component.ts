@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -8,6 +8,17 @@ import { RouterLink } from '@angular/router';
   templateUrl: './navigation-bar.component.html',
   styleUrl: './navigation-bar.component.css'
 })
-export class NavigationBarComponent {
+export class NavigationBarComponent implements OnInit {
+
+  @Input() userName: string;
+  @Input() userAge: number;
+  constructor(){
+    
+  }
+
+  ngOnInit(): void {
+    
+  }
+  
 
 }

@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, Input, OnInit, Output, signal } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
@@ -11,7 +11,7 @@ import { UsersComponent } from './users/users.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   // title = 'demo-standalone';
   // counter = signal(0);
 
@@ -31,7 +31,12 @@ export class AppComponent {
   //   const input = event.target as HTMLInputElement;
   //   this.count.set(parseInt(input.value));
   // }
+  @Output() name = 'Svetlin';
+  @Output() age = 52
 
+  ngOnInit(): void {
+    
+  }
 
 }
 //bootstrapApplication(AppComponent)
