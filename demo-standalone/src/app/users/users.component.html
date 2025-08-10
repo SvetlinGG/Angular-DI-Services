@@ -3,7 +3,7 @@
 
     <ul>
         @for (user of users; track $index) {
-            <li>id: {{user.id}}; name:{{user.name}} - company:{{user.company}}</li>
+            <li [routerLink]="['/users', 'details', user.id]">id: {{user.id}}; name:{{user.name}} - company:{{user.company}}</li>
         }
         
     </ul>
