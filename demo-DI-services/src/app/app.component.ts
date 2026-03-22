@@ -14,3 +14,7 @@ export class AppComponent {
     this.title = 'Svetlin'
   }
 }
+// Standart console log - simple
+
+
+// Monkey patching console log - simple
