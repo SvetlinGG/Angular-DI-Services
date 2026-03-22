@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
+import { SimpleUser } from './types';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { UserListComponent } from './user-list/user-list.component';
 export class AppComponent {
   title = 'demo-DI-services';
 
-  appUsers = [
+  appUsers: SimpleUser[] = [
     { name: 'Petar Petrov', age: 21},
     { name: 'Ivan Ivanov', age: 31},
     { name: 'George Georgiev', age: 41},
