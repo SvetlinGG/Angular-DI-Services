@@ -1,3 +1,7 @@
 <p>user-list works!</p>
 
-<app-user-list-item />
+
+
+@for (user of usersList; track $index) {
+    <app-user-list-item />
+}
