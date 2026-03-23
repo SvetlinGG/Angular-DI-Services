@@ -22,6 +22,10 @@ export class AppComponent {
   handleClick(){
     this.title = 'Svetlin'
   }
+
+  addUser(){
+    
+  }
 }
 // Standart console log - simple
 
