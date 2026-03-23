@@ -24,10 +24,18 @@ export class AppComponent {
   }
 
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement){
-    console.log(inputName.value);
-    console.log(inputAge.value);
+    
 
-    const user = { name: inputName.value, age: inputAge.value};
+    const user = { 
+      name: inputName.value, 
+      age: Number(inputAge.value),
+    };
+    this.appUsers.push(user);
+    //this.addUser = [...this.addUser, user]
+
+    inputName.value = '';
+    inputAge.value = '';
+    console.log(this.addUser);
     
   }
 }
