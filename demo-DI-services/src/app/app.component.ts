@@ -23,7 +23,11 @@ export class AppComponent {
     this.title = 'Svetlin'
   }
 
-  addUser(){
+  addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement){
+    console.log(inputName.value);
+    console.log(inputAge.value);
+
+    const user = { name: inputName.value, age: inputAge.value};
     
   }
 }
